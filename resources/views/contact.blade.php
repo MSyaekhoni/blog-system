@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-layout>
+    <x-slot:title>
+        Contact
+    </x-slot:title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+    <x-slot:header>
+        Contact Page
+    </x-slot:header>
 
-<body>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/blog">Blog</a>
-    <a href="/contact">Contact</a>
+    <p>Ini adalah Halaman Contact.</p>
 
-    <h1>Halaman Contact</h1>
     <ul>
         <li>
             <a href="https://www.instagram.com/m__syaekhoni/">Instagram</a>
@@ -24,6 +17,4 @@
             <a href="https://www.linkedin.com/in/muhammad-syaekhoni-4427581a9/">LinkedIn</a>
         </li>
     </ul>
-</body>
-
-</html>
+</x-layout>
