@@ -1,10 +1,10 @@
 <x-layout>
     <x-slot:title>
-        Contact
+        Contact Page
     </x-slot:title>
 
     <x-slot:header>
-        Contact Page
+        Contact
     </x-slot:header>
 
     <p>Ini adalah Halaman Contact.</p>

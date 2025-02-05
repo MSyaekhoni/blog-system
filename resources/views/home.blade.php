@@ -1,10 +1,10 @@
 <x-layout>
     <x-slot:title>
-        Home
+        Home Page
     </x-slot:title>
 
     <x-slot:header>
-        Home Page
+        Home
     </x-slot:header>
 
     <p>Ini adalah Halaman Home.</p>

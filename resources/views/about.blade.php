@@ -1,10 +1,10 @@
 <x-layout>
     <x-slot:title>
-        About
+        About Page
     </x-slot:title>
 
     <x-slot:header>
-        About Page
+        About
     </x-slot:header>
 
     <p>Ini adalah Halaman About.</p>
