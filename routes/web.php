@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Arr;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', function () {
     return view('home');
@@ -12,55 +13,11 @@ Route::get('/about', function () {
 });
 
 Route::get('/blog', function () {
-    return view('blog', ['posts' => [
-        [
-            'id' => 1,
-            'slug' => 'article-1',
-            'title' => 'Article 1',
-            'author' => 'Joko Subroto',
-            'body' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur perferendis
-            quia, expedita laudantium
-            quis ipsum delectus iusto eius cumque, enim, ut nostrum distinctio officiis. Doloribus aut nostrum quasi
-            nesciunt! Recusandae.'
-        ],
-        [
-            'id' => 2,
-            'slug' => 'article-2',
-            'title' => 'Article 2',
-            'author' => 'Mulyono',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam alias pariatur
-            consectetur cumque, repellendus asperiores labore rem quos, animi sequi quibusdam ipsa voluptates eum veniam
-            in perferendis ipsum amet. Fuga.'
-        ]
-    ]]);
+    return view('blog', ['posts' => Post::all()]);
 });
 
 Route::get('/blog/{slug}', function ($slug) {
-    $posts = [
-        [
-            'id' => 1,
-            'slug' => 'article-1',
-            'title' => 'Article 1',
-            'author' => 'Joko Subroto',
-            'body' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur perferendis
-            quia, expedita laudantium
-            quis ipsum delectus iusto eius cumque, enim, ut nostrum distinctio officiis. Doloribus aut nostrum quasi
-            nesciunt! Recusandae.'
-        ],
-        [
-            'id' => 2,
-            'slug' => 'article-2',
-            'title' => 'Article 2',
-            'author' => 'Mulyono',
-            'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam alias pariatur
-            consectetur cumque, repellendus asperiores labore rem quos, animi sequi quibusdam ipsa voluptates eum veniam
-            in perferendis ipsum amet. Fuga.'
-        ]
-    ];
-
-    $post = Arr::first($posts, function ($post) use ($slug) {
-        return $post['slug'] == $slug;
-    });
+    $post = Post::find($slug);
     return view('singleBlog', ['post' => $post]);
 });
 
