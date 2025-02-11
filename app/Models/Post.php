@@ -14,6 +14,8 @@ class Post extends Model
 
     protected $fillable = ['title', 'slug', 'author', 'category', 'body'];
 
+    protected $with = ['author', 'category'];
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class);

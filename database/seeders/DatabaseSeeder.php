@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([CategorySeeder::class]);
 
-        Post::factory(10)->recycle([
-            User::factory(5)->create(),
+        Post::factory(100)->recycle([
+            User::factory(10)->create(),
             Category::all()
         ])->create();
     }
